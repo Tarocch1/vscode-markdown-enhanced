@@ -1,7 +1,7 @@
 import { join } from 'path';
 import { Uri, workspace } from 'vscode';
 import { TextEncoder, TextDecoder } from 'util';
-import { config } from '../config'
+import { config } from '../config';
 
 type File = {
   from: string;
@@ -47,7 +47,7 @@ const filesMap: Files = {
   ],
 };
 
-export async function updateCSS() {
+async function updateCSS() {
   const files = filesMap[config.theme];
   const textEncoder = new TextEncoder();
   const textDecoder = new TextDecoder();
@@ -58,4 +58,9 @@ export async function updateCSS() {
     const fileResult = textEncoder.encode(file.transfer(fileContents));
     workspace.fs.writeFile(Uri.file(getCSSPath(file.to)), fileResult);
   }
+}
+
+export async function initCSS() {
+  await updateCSS();
+  config.on(['markdownEnhanced.theme'], updateCSS);
 }

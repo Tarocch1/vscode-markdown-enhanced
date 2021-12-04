@@ -16,6 +16,10 @@ Preview supports light and dark themes. Default is light, change theme with sett
 }
 ```
 
+### [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor)
+
+![anchor](images/anchor.png)
+
 ## TODO
 
 - Marmaid

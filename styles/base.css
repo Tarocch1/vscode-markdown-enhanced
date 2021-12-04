@@ -9,3 +9,26 @@
 .vscode-body blockquote {
   background-color: inherit;
 }
+
+.vscode-body h1 .header-anchor,
+.vscode-body h2 .header-anchor,
+.vscode-body h3 .header-anchor,
+.vscode-body h4 .header-anchor,
+.vscode-body h5 .header-anchor,
+.vscode-body h6 .header-anchor {
+  float: left;
+  margin-left: -0.87em;
+  padding-right: 0.23em;
+  opacity: 0;
+  text-decoration: none;
+}
+
+.vscode-body h1:hover .header-anchor,
+.vscode-body h2:hover .header-anchor,
+.vscode-body h3:hover .header-anchor,
+.vscode-body h4:hover .header-anchor,
+.vscode-body h5:hover .header-anchor,
+.vscode-body h6:hover .header-anchor {
+  opacity: 1;
+  text-decoration: none;
+}

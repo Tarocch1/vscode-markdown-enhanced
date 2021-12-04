@@ -1,5 +1,7 @@
 {
   "markdownEnhanced.configuration.theme": "Theme",
   "markdownEnhanced.configuration.theme.light": "Github Light",
-  "markdownEnhanced.configuration.theme.dark": "Github Dark"
+  "markdownEnhanced.configuration.theme.dark": "Github Dark",
+  "markdownEnhanced.configuration.anchor.enable": "Enable markdown-it-anchor",
+  "markdownEnhanced.configuration.anchor.permalink": "Enable markdown-it-anchor permalink"
 }

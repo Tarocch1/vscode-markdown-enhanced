@@ -2,7 +2,7 @@
   "name": "markdown-enhanced",
   "displayName": "Markdown Enhanced",
   "description": "Markdown Enhanced for vscode",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "license": "SEE LICENSE IN LICENSE",
   "author": "Tarocch1 <huiben.fang@gmail.com> (https://github.com/Tarocch1)",
   "homepage": "https://github.com/Tarocch1/vscode-markdown-enhanced#readme",
@@ -24,6 +24,7 @@
   ],
   "main": "./out/extension.js",
   "contributes": {
+    "markdown.markdownItPlugins": true,
     "markdown.previewStyles": [
       "./styles/base.css",
       "./styles/github-markdown.css",
@@ -44,6 +45,16 @@
             "%markdownEnhanced.configuration.theme.dark%"
           ],
           "description": "%markdownEnhanced.configuration.theme%"
+        },
+        "markdownEnhanced.anchor.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "%markdownEnhanced.configuration.anchor.enable%"
+        },
+        "markdownEnhanced.anchor.permalink": {
+          "type": "boolean",
+          "default": true,
+          "description": "%markdownEnhanced.configuration.anchor.permalink%"
         }
       }
     }
@@ -54,12 +65,15 @@
     "watch": "tsc -watch -p ./"
   },
   "devDependencies": {
+    "@types/markdown-it": "^12.2.3",
     "@types/node": "^16.11.11",
     "@types/vscode": "^1.62.0",
+    "markdown-it": "^12.2.0",
     "typescript": "^4.4.3"
   },
   "dependencies": {
     "github-markdown-css": "^5.0.0",
-    "highlight.js": "^11.3.1"
+    "highlight.js": "^11.3.1",
+    "markdown-it-anchor": "^8.4.1"
   }
 }

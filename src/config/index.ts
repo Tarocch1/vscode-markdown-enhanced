@@ -1,24 +1,20 @@
-import { ConfigurationChangeEvent } from 'vscode';
 import { ConfigReader } from './ConfigReader';
-import { updateCSS } from '../services/style';
 
 class Config extends ConfigReader {
   constructor() {
     super('markdownEnhanced');
   }
 
-  init() {
-    updateCSS();
-  }
-
-  onChange(e: ConfigurationChangeEvent) {
-    if (e.affectsConfiguration('markdownEnhanced.theme')) {
-      updateCSS();
-    }
-  }
-
   get theme(): 'light' | 'dark' {
     return this.read<'light' | 'dark'>('theme', 'light');
+  }
+
+  get anchorEnable(): boolean {
+    return this.read<boolean>('anchor.enable', true);
+  }
+
+  get anchorPermalink(): boolean {
+    return this.read<boolean>('anchor.permalink', true);
   }
 }
 

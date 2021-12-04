@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.2.0
+
+- [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor)
+
 ## v0.1.1
 
 - Fix base.css

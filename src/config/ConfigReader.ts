@@ -5,10 +5,11 @@ import {
   ConfigurationChangeEvent,
 } from 'vscode';
 
-export abstract class ConfigReader extends Disposable {
+export class ConfigReader extends Disposable {
   private _section: string;
   private _config: WorkspaceConfiguration;
   private _disposable: Disposable;
+  private _events: Map<string[], (e: ConfigurationChangeEvent) => void>;
 
   constructor(section: string) {
     super(() => this.dispose());
@@ -17,9 +18,10 @@ export abstract class ConfigReader extends Disposable {
     this._disposable = workspace.onDidChangeConfiguration((e) => {
       if (e.affectsConfiguration(this._section)) {
         this._config = workspace.getConfiguration(this._section);
-        this.onChange(e);
+        this.emit(e);
       }
     });
+    this._events = new Map();
   }
 
   dispose() {
@@ -30,9 +32,15 @@ export abstract class ConfigReader extends Disposable {
     return this._config.get<T>(key, defaultValue);
   }
 
-  private getConfObjects() {
-    //
+  emit(e: ConfigurationChangeEvent) {
+    for (const [sections, handler] of this._events) {
+      if (sections.some((section) => e.affectsConfiguration(section))) {
+        handler(e);
+      }
+    }
   }
 
-  abstract onChange(e: ConfigurationChangeEvent): void;
+  on(sections: string[], handler: (e: ConfigurationChangeEvent) => void) {
+    this._events.set(sections, handler);
+  }
 }

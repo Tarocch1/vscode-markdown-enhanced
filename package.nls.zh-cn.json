@@ -1,5 +1,7 @@
 {
   "markdownEnhanced.configuration.theme": "主题",
   "markdownEnhanced.configuration.theme.light": "Github 亮色",
-  "markdownEnhanced.configuration.theme.dark": "Github 暗色"
+  "markdownEnhanced.configuration.theme.dark": "Github 暗色",
+  "markdownEnhanced.configuration.anchor.enable": "开启 markdown-it-anchor 插件",
+  "markdownEnhanced.configuration.anchor.permalink": "开启 markdown-it-anchor 永久链接"
 }
