@@ -16,6 +16,14 @@ class Config extends ConfigReader {
   get anchorPermalink(): boolean {
     return this.read<boolean>('anchor.permalink', true);
   }
+
+  get tocEnable(): boolean {
+    return this.read<boolean>('toc.enable', true);
+  }
+
+  get tocIncludeLevel(): number[] {
+    return this.read<number[]>('toc.includeLevel', [2, 3, 4]);
+  }
 }
 
 export const config = new Config();

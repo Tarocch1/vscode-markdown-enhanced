@@ -3,5 +3,7 @@
   "markdownEnhanced.configuration.theme.light": "Github 亮色",
   "markdownEnhanced.configuration.theme.dark": "Github 暗色",
   "markdownEnhanced.configuration.anchor.enable": "开启 markdown-it-anchor 插件",
-  "markdownEnhanced.configuration.anchor.permalink": "开启 markdown-it-anchor 永久链接"
+  "markdownEnhanced.configuration.anchor.permalink": "开启 markdown-it-anchor 永久链接",
+  "markdownEnhanced.configuration.toc.enable": "开启 markdown-it-table-of-contents 插件",
+  "markdownEnhanced.configuration.toc.includeLevel": "markdown-it-table-of-contents 包含的 header 等级"
 }

@@ -55,6 +55,26 @@
           "type": "boolean",
           "default": true,
           "description": "%markdownEnhanced.configuration.anchor.permalink%"
+        },
+        "markdownEnhanced.toc.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "%markdownEnhanced.configuration.toc.enable%"
+        },
+        "markdownEnhanced.toc.includeLevel": {
+          "type": "array",
+          "default": [
+            2,
+            3,
+            4
+          ],
+          "maxItems": 6,
+          "minItems": 0,
+          "items": {
+            "type": "number"
+          },
+          "uniqueItems": true,
+          "description": "%markdownEnhanced.configuration.toc.includeLevel%"
         }
       }
     }
@@ -74,6 +94,7 @@
   "dependencies": {
     "github-markdown-css": "^5.0.0",
     "highlight.js": "^11.3.1",
-    "markdown-it-anchor": "^8.4.1"
+    "markdown-it-anchor": "^8.4.1",
+    "markdown-it-table-of-contents": "^0.6.0"
   }
 }

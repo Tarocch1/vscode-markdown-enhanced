@@ -3,5 +3,7 @@
   "markdownEnhanced.configuration.theme.light": "Github Light",
   "markdownEnhanced.configuration.theme.dark": "Github Dark",
   "markdownEnhanced.configuration.anchor.enable": "Enable markdown-it-anchor",
-  "markdownEnhanced.configuration.anchor.permalink": "Enable markdown-it-anchor permalink"
+  "markdownEnhanced.configuration.anchor.permalink": "Enable markdown-it-anchor Permalink",
+  "markdownEnhanced.configuration.toc.enable": "Enable markdown-it-table-of-contents",
+  "markdownEnhanced.configuration.toc.includeLevel": "Include Level of markdown-it-table-of-contents"
 }
