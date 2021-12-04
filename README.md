@@ -18,7 +18,7 @@ Preview supports light and dark themes. Default is light, change theme with sett
 
 ### [markdown-it-anchor](https://github.com/valeriangalliat/markdown-it-anchor)
 
-![anchor](images/anchor.png)
+![anchor](https://cdn.jsdelivr.net/gh/Tarocch1/vscode-markdown-enhanced/images/anchor.png)
 
 ## TODO
 
