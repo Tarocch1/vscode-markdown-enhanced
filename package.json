@@ -2,7 +2,7 @@
   "name": "markdown-enhanced",
   "displayName": "Markdown Enhanced",
   "description": "Markdown Enhanced for vscode",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "license": "SEE LICENSE IN LICENSE",
   "author": "Tarocch1 <huiben.fang@gmail.com> (https://github.com/Tarocch1)",
   "homepage": "https://github.com/Tarocch1/vscode-markdown-enhanced#readme",
@@ -23,7 +23,31 @@
     "onLanguage:markdown"
   ],
   "main": "./out/extension.js",
-  "contributes": {},
+  "contributes": {
+    "markdown.previewStyles": [
+      "./styles/base.css",
+      "./styles/github-markdown.css",
+      "./styles/github-highlight.css"
+    ],
+    "configuration": {
+      "title": "Markdown Enhanced",
+      "properties": {
+        "markdownEnhanced.theme": {
+          "type": "string",
+          "default": "light",
+          "enum": [
+            "light",
+            "dark"
+          ],
+          "enumDescriptions": [
+            "%markdownEnhanced.configuration.theme.light%",
+            "%markdownEnhanced.configuration.theme.dark%"
+          ],
+          "description": "%markdownEnhanced.configuration.theme%"
+        }
+      }
+    }
+  },
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
@@ -33,5 +57,9 @@
     "@types/node": "^16.11.11",
     "@types/vscode": "^1.62.0",
     "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "github-markdown-css": "^5.0.0",
+    "highlight.js": "^11.3.1"
   }
 }

@@ -1,0 +1,11 @@
+.vscode-body code {
+  color: inherit;
+}
+
+.vscode-body pre code {
+  color: initial;
+}
+
+.vscode-body blockquote {
+  background-color: inherit;
+}
