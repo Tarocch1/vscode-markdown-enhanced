@@ -1,16 +1,7 @@
-import { workspace, ExtensionContext } from 'vscode';
-import { updateCSS } from './services/style';
+import { ExtensionContext } from 'vscode';
+import { config } from './config';
 
 export async function activate(context: ExtensionContext) {
-  try {
-    updateCSS();
-
-    workspace.onDidChangeConfiguration((event) => {
-      if (event.affectsConfiguration('markdownEnhanced')) {
-        updateCSS();
-      }
-    });
-  } catch (error) {
-    console.log(error);
-  }
+  config.init();
+  context.subscriptions.push(config);
 }

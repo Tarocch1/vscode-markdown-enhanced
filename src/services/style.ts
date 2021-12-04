@@ -1,6 +1,7 @@
+import { join } from 'path';
 import { Uri, workspace } from 'vscode';
 import { TextEncoder, TextDecoder } from 'util';
-import { join } from 'path';
+import { config } from '../config'
 
 type File = {
   from: string;
@@ -47,10 +48,7 @@ const filesMap: Files = {
 };
 
 export async function updateCSS() {
-  const configuration = workspace.getConfiguration('markdownEnhanced');
-  let theme = configuration.get<keyof Files>('theme');
-  if (!theme) theme = 'light';
-  const files = filesMap[theme];
+  const files = filesMap[config.theme];
   const textEncoder = new TextEncoder();
   const textDecoder = new TextDecoder();
   for (const file of files) {
