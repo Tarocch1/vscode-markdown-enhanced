@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.5.0
+
+- Add [mermaid](https://mermaid-js.github.io)
+
 ## v0.4.0
 
 - Add [Prism.js](https://prismjs.com)

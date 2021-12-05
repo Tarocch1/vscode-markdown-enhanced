@@ -44,6 +44,10 @@ Preview supports light and dark themes. Default is light, change theme with sett
 
 ![plugin](https://cdn.jsdelivr.net/gh/Tarocch1/vscode-markdown-enhanced/images/plugin.png)
 
+- [mermaid](https://mermaid-js.github.io)
+
+![mermaid](https://cdn.jsdelivr.net/gh/Tarocch1/vscode-markdown-enhanced/images/mermaid.png)
+
 ## TODO
 
 - Marmaid
