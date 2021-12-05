@@ -24,6 +24,10 @@ Preview supports light and dark themes. Default is light, change theme with sett
 
 ![anchor](https://cdn.jsdelivr.net/gh/Tarocch1/vscode-markdown-enhanced/images/toc.png)
 
+### [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)
+
+![anchor](https://cdn.jsdelivr.net/gh/Tarocch1/vscode-markdown-enhanced/images/footnote.png)
+
 ## TODO
 
 - Marmaid

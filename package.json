@@ -75,6 +75,11 @@
           },
           "uniqueItems": true,
           "description": "%markdownEnhanced.configuration.toc.includeLevel%"
+        },
+        "markdownEnhanced.footnote.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "%markdownEnhanced.configuration.footnote.enable%"
         }
       }
     }
@@ -95,6 +100,7 @@
     "github-markdown-css": "^5.0.0",
     "highlight.js": "^11.3.1",
     "markdown-it-anchor": "^8.4.1",
+    "markdown-it-footnote": "^3.0.3",
     "markdown-it-table-of-contents": "^0.6.0"
   }
 }

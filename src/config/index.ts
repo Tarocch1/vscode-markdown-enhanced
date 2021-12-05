@@ -24,6 +24,10 @@ class Config extends ConfigReader {
   get tocIncludeLevel(): number[] {
     return this.read<number[]>('toc.includeLevel', [2, 3, 4]);
   }
+
+  get footnoteEnable(): boolean {
+    return this.read<boolean>('footnote.enable', true);
+  }
 }
 
 export const config = new Config();
