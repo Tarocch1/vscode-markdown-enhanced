@@ -2,7 +2,7 @@
   "name": "markdown-enhanced",
   "displayName": "Markdown Enhanced",
   "description": "Markdown Enhanced for vscode",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "license": "SEE LICENSE IN LICENSE",
   "author": "Tarocch1 <huiben.fang@gmail.com> (https://github.com/Tarocch1)",
   "homepage": "https://github.com/Tarocch1/vscode-markdown-enhanced#readme",
@@ -46,6 +46,11 @@
           ],
           "description": "%markdownEnhanced.configuration.theme%"
         },
+        "markdownEnhanced.abbr.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "%markdownEnhanced.configuration.abbr.enable%"
+        },
         "markdownEnhanced.anchor.enable": {
           "type": "boolean",
           "default": true,
@@ -56,12 +61,42 @@
           "default": true,
           "description": "%markdownEnhanced.configuration.anchor.permalink%"
         },
-        "markdownEnhanced.toc.enable": {
+        "markdownEnhanced.attrs.enable": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.toc.enable%"
+          "description": "%markdownEnhanced.configuration.attrs.enable%"
         },
-        "markdownEnhanced.toc.includeLevel": {
+        "markdownEnhanced.deflist.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "%markdownEnhanced.configuration.deflist.enable%"
+        },
+        "markdownEnhanced.footnote.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "%markdownEnhanced.configuration.footnote.enable%"
+        },
+        "markdownEnhanced.mark.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "%markdownEnhanced.configuration.mark.enable%"
+        },
+        "markdownEnhanced.sub.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "%markdownEnhanced.configuration.sub.enable%"
+        },
+        "markdownEnhanced.sup.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "%markdownEnhanced.configuration.sup.enable%"
+        },
+        "markdownEnhanced.tableOfContents.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "%markdownEnhanced.configuration.tableOfContents.enable%"
+        },
+        "markdownEnhanced.tableOfContents.includeLevel": {
           "type": "array",
           "default": [
             2,
@@ -74,12 +109,27 @@
             "type": "number"
           },
           "uniqueItems": true,
-          "description": "%markdownEnhanced.configuration.toc.includeLevel%"
+          "description": "%markdownEnhanced.configuration.tableOfContents.includeLevel%"
         },
-        "markdownEnhanced.footnote.enable": {
+        "markdownEnhanced.taskLists.enable": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.footnote.enable%"
+          "description": "%markdownEnhanced.configuration.taskLists.enable%"
+        },
+        "markdownEnhanced.taskLists.readonly": {
+          "type": "boolean",
+          "default": true,
+          "description": "%markdownEnhanced.configuration.taskLists.readonly%"
+        },
+        "markdownEnhanced.taskLists.label": {
+          "type": "boolean",
+          "default": true,
+          "description": "%markdownEnhanced.configuration.taskLists.label%"
+        },
+        "markdownEnhanced.underline.enable": {
+          "type": "boolean",
+          "default": true,
+          "description": "%markdownEnhanced.configuration.underline.enable%"
         }
       }
     }
@@ -99,8 +149,16 @@
   "dependencies": {
     "github-markdown-css": "^5.0.0",
     "highlight.js": "^11.3.1",
+    "markdown-it-abbr": "^1.0.4",
     "markdown-it-anchor": "^8.4.1",
+    "markdown-it-attrs": "^4.1.0",
+    "markdown-it-deflist": "^2.1.0",
     "markdown-it-footnote": "^3.0.3",
-    "markdown-it-table-of-contents": "^0.6.0"
+    "markdown-it-mark": "^3.0.1",
+    "markdown-it-sub": "^1.0.0",
+    "markdown-it-sup": "^1.0.0",
+    "markdown-it-table-of-contents": "^0.6.0",
+    "markdown-it-task-lists": "^2.1.1",
+    "markdown-it-underline": "^1.0.1"
   }
 }

@@ -2,9 +2,19 @@
   "markdownEnhanced.configuration.theme": "Theme",
   "markdownEnhanced.configuration.theme.light": "Github Light",
   "markdownEnhanced.configuration.theme.dark": "Github Dark",
+  "markdownEnhanced.configuration.abbr.enable": "Enable markdown-it-abbr",
   "markdownEnhanced.configuration.anchor.enable": "Enable markdown-it-anchor",
   "markdownEnhanced.configuration.anchor.permalink": "Enable markdown-it-anchor Permalink",
-  "markdownEnhanced.configuration.toc.enable": "Enable markdown-it-table-of-contents",
-  "markdownEnhanced.configuration.toc.includeLevel": "Include Level of markdown-it-table-of-contents",
-  "markdownEnhanced.configuration.footnote.enable": "Enable markdown-it-footnote"
+  "markdownEnhanced.configuration.attrs.enable": "Enable markdown-it-attrs",
+  "markdownEnhanced.configuration.deflist.enable": "Enable markdown-it-deflist",
+  "markdownEnhanced.configuration.footnote.enable": "Enable markdown-it-footnote",
+  "markdownEnhanced.configuration.mark.enable": "Enable markdown-it-mark",
+  "markdownEnhanced.configuration.sub.enable": "Enable markdown-it-sub",
+  "markdownEnhanced.configuration.sup.enable": "Enable markdown-it-sup",
+  "markdownEnhanced.configuration.tableOfContents.enable": "Enable markdown-it-table-of-contents",
+  "markdownEnhanced.configuration.tableOfContents.includeLevel": "Include Level of markdown-it-table-of-contents",
+  "markdownEnhanced.configuration.taskLists.enable": "Enable markdown-it-task-lists",
+  "markdownEnhanced.configuration.taskLists.readonly": "Checkboxes of markdown-it-task-lists Readonly",
+  "markdownEnhanced.configuration.taskLists.label": "Enable Label for markdown-it-task-lists",
+  "markdownEnhanced.configuration.underline.enable": "Enable markdown-it-underline"
 }

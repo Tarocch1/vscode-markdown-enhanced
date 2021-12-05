@@ -21,3 +21,15 @@ export function slugify(str: string) {
     .replace(/^(\d)/, '_$1')
     .toLowerCase();
 }
+
+/**
+ * camelCase to kebabCase
+ *
+ * 'aaBbCc' -> 'aa-bb-cc'
+ *
+ * @param str
+ * @returns
+ */
+export function camel2Kebab(str: string) {
+  return str.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);
+}

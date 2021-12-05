@@ -4,12 +4,12 @@ import { config } from '../config';
 
 export class MarkdownItTableOfContents extends Plugin {
   constructor() {
-    super('toc', 'markdown-it-table-of-contents');
+    super('tableOfContents');
   }
 
   get options() {
     const options = {
-      includeLevel: config.tocIncludeLevel,
+      includeLevel: config.tableOfContentsIncludeLevel,
       slugify,
     };
     return options;

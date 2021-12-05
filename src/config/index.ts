@@ -9,24 +9,60 @@ class Config extends ConfigReader {
     return this.read<'light' | 'dark'>('theme', 'light');
   }
 
+  get abbrEnable(): boolean {
+    return this.read<boolean>('abbr.enable', true);
+  }
+
   get anchorEnable(): boolean {
     return this.read<boolean>('anchor.enable', true);
   }
-
   get anchorPermalink(): boolean {
     return this.read<boolean>('anchor.permalink', true);
   }
 
-  get tocEnable(): boolean {
-    return this.read<boolean>('toc.enable', true);
+  get attrsEnable(): boolean {
+    return this.read<boolean>('attrs.enable', true);
   }
 
-  get tocIncludeLevel(): number[] {
-    return this.read<number[]>('toc.includeLevel', [2, 3, 4]);
+  get deflistEnable(): boolean {
+    return this.read<boolean>('deflist.enable', true);
   }
 
   get footnoteEnable(): boolean {
     return this.read<boolean>('footnote.enable', true);
+  }
+
+  get markEnable(): boolean {
+    return this.read<boolean>('mark.enable', true);
+  }
+
+  get subEnable(): boolean {
+    return this.read<boolean>('sub.enable', true);
+  }
+
+  get supEnable(): boolean {
+    return this.read<boolean>('sup.enable', true);
+  }
+
+  get tableOfContentsEnable(): boolean {
+    return this.read<boolean>('tableOfContents.enable', true);
+  }
+  get tableOfContentsIncludeLevel(): number[] {
+    return this.read<number[]>('tableOfContents.includeLevel', [2, 3, 4]);
+  }
+
+  get taskListsEnable(): boolean {
+    return this.read<boolean>('taskLists.enable', true);
+  }
+  get taskListsReadonly(): boolean {
+    return this.read<boolean>('taskLists.readonly', true);
+  }
+  get taskListsLabel(): boolean {
+    return this.read<boolean>('taskLists.label', true);
+  }
+
+  get underlineEnable(): boolean {
+    return this.read<boolean>('underline.enable', true);
   }
 }
 

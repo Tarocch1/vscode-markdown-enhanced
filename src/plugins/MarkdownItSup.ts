@@ -1,8 +1,8 @@
 import { Plugin } from './Plugin';
 
-export class MarkdownItFootnote extends Plugin {
+export class MarkdownItSup extends Plugin {
   constructor() {
-    super('footnote');
+    super('sup');
   }
 
   get options() {
