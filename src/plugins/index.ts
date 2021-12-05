@@ -3,6 +3,7 @@ import { MarkdownItAnchor } from './MarkdownItAnchor';
 import { MarkdownItAttrs } from './MarkdownItAttrs';
 import { MarkdownItDeflist } from './MarkdownItDeflist';
 import { MarkdownItFootnote } from './MarkdownItFootnote';
+import { MarkdownItHighlight } from './MarkdownItHighlight'
 import { MarkdownItMark } from './MarkdownItMark'
 import { MarkdownItSub } from './MarkdownItSub';
 import { MarkdownItSup } from './MarkdownItSup';
@@ -16,6 +17,7 @@ export const plugins = [
   MarkdownItAttrs,
   MarkdownItDeflist,
   MarkdownItFootnote,
+  MarkdownItHighlight,
   MarkdownItMark,
   MarkdownItSub,
   MarkdownItSup,

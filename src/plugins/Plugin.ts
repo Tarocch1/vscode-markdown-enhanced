@@ -1,15 +1,13 @@
 import { commands } from 'vscode';
 import MarkdownIt from 'markdown-it';
-import { camel2Kebab } from './utils'
+import { camel2Kebab } from './utils';
 import { config } from '../config';
 
 export abstract class Plugin {
-  private _name: string;
-  private _package: string;
+  _package: string;
 
-  constructor(name: string) {
-    this._name = name;
-    this._package = `markdown-it-${camel2Kebab(name)}`
+  constructor(private _name: string) {
+    this._package = `markdown-it-${camel2Kebab(this._name)}`;
 
     config.on([`markdownEnhanced.${this._name}`], () => {
       commands.executeCommand('markdown.api.reloadPlugins');
@@ -22,8 +20,8 @@ export abstract class Plugin {
 
   load(md: MarkdownIt) {
     if (this.enable) {
-      md.use(require(this._package), this.options);
-      this.extra(md)
+      if (this._package) md.use(require(this._package), this.options);
+      this.extra(md);
     }
   }
 

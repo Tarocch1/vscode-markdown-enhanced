@@ -5,6 +5,13 @@ class Config extends ConfigReader {
     super('markdownEnhanced');
   }
 
+  get highlightEnable(): boolean {
+    return true;
+  }
+  get highlight(): 'prism.js' | 'highlight.js' {
+    return this.read<'prism.js' | 'highlight.js'>('highlight', 'prism.js');
+  }
+
   get theme(): 'light' | 'dark' {
     return this.read<'light' | 'dark'>('theme', 'light');
   }

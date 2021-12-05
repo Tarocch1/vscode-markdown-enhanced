@@ -2,7 +2,7 @@
   "name": "markdown-enhanced",
   "displayName": "Markdown Enhanced",
   "description": "Markdown Enhanced for vscode",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "license": "SEE LICENSE IN LICENSE",
   "author": "Tarocch1 <huiben.fang@gmail.com> (https://github.com/Tarocch1)",
   "homepage": "https://github.com/Tarocch1/vscode-markdown-enhanced#readme",
@@ -28,11 +28,24 @@
     "markdown.previewStyles": [
       "./styles/base.css",
       "./styles/github-markdown.css",
-      "./styles/github-highlight.css"
+      "./styles/highlight.css"
     ],
     "configuration": {
       "title": "Markdown Enhanced",
       "properties": {
+        "markdownEnhanced.highlight": {
+          "type": "string",
+          "default": "prism.js",
+          "enum": [
+            "prism.js",
+            "highlight.js"
+          ],
+          "markdownEnumDescriptions": [
+            "%markdownEnhanced.configuration.highlight.prism%",
+            "%markdownEnhanced.configuration.highlight.highlight%"
+          ],
+          "markdownDescription": "%markdownEnhanced.configuration.highlight%"
+        },
         "markdownEnhanced.theme": {
           "type": "string",
           "default": "light",
@@ -40,61 +53,61 @@
             "light",
             "dark"
           ],
-          "enumDescriptions": [
+          "markdownEnumDescriptions": [
             "%markdownEnhanced.configuration.theme.light%",
             "%markdownEnhanced.configuration.theme.dark%"
           ],
-          "description": "%markdownEnhanced.configuration.theme%"
+          "markdownDescription": "%markdownEnhanced.configuration.theme%"
         },
         "markdownEnhanced.abbr.enable": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.abbr.enable%"
+          "markdownDescription": "%markdownEnhanced.configuration.abbr.enable%"
         },
         "markdownEnhanced.anchor.enable": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.anchor.enable%"
+          "markdownDescription": "%markdownEnhanced.configuration.anchor.enable%"
         },
         "markdownEnhanced.anchor.permalink": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.anchor.permalink%"
+          "markdownDescription": "%markdownEnhanced.configuration.anchor.permalink%"
         },
         "markdownEnhanced.attrs.enable": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.attrs.enable%"
+          "markdownDescription": "%markdownEnhanced.configuration.attrs.enable%"
         },
         "markdownEnhanced.deflist.enable": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.deflist.enable%"
+          "markdownDescription": "%markdownEnhanced.configuration.deflist.enable%"
         },
         "markdownEnhanced.footnote.enable": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.footnote.enable%"
+          "markdownDescription": "%markdownEnhanced.configuration.footnote.enable%"
         },
         "markdownEnhanced.mark.enable": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.mark.enable%"
+          "markdownDescription": "%markdownEnhanced.configuration.mark.enable%"
         },
         "markdownEnhanced.sub.enable": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.sub.enable%"
+          "markdownDescription": "%markdownEnhanced.configuration.sub.enable%"
         },
         "markdownEnhanced.sup.enable": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.sup.enable%"
+          "markdownDescription": "%markdownEnhanced.configuration.sup.enable%"
         },
         "markdownEnhanced.tableOfContents.enable": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.tableOfContents.enable%"
+          "markdownDescription": "%markdownEnhanced.configuration.tableOfContents.enable%"
         },
         "markdownEnhanced.tableOfContents.includeLevel": {
           "type": "array",
@@ -109,27 +122,27 @@
             "type": "number"
           },
           "uniqueItems": true,
-          "description": "%markdownEnhanced.configuration.tableOfContents.includeLevel%"
+          "markdownDescription": "%markdownEnhanced.configuration.tableOfContents.includeLevel%"
         },
         "markdownEnhanced.taskLists.enable": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.taskLists.enable%"
+          "markdownDescription": "%markdownEnhanced.configuration.taskLists.enable%"
         },
         "markdownEnhanced.taskLists.readonly": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.taskLists.readonly%"
+          "markdownDescription": "%markdownEnhanced.configuration.taskLists.readonly%"
         },
         "markdownEnhanced.taskLists.label": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.taskLists.label%"
+          "markdownDescription": "%markdownEnhanced.configuration.taskLists.label%"
         },
         "markdownEnhanced.underline.enable": {
           "type": "boolean",
           "default": true,
-          "description": "%markdownEnhanced.configuration.underline.enable%"
+          "markdownDescription": "%markdownEnhanced.configuration.underline.enable%"
         }
       }
     }
@@ -142,6 +155,7 @@
   "devDependencies": {
     "@types/markdown-it": "^12.2.3",
     "@types/node": "^16.11.11",
+    "@types/prismjs": "^1.16.6",
     "@types/vscode": "^1.62.0",
     "markdown-it": "^12.2.0",
     "typescript": "^4.4.3"
@@ -159,6 +173,7 @@
     "markdown-it-sup": "^1.0.0",
     "markdown-it-table-of-contents": "^0.6.0",
     "markdown-it-task-lists": "^2.1.1",
-    "markdown-it-underline": "^1.0.1"
+    "markdown-it-underline": "^1.0.1",
+    "prismjs": "^1.25.0"
   }
 }
