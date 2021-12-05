@@ -12,6 +12,7 @@
   "markdownEnhanced.configuration.deflist.enable": "开启 [markdown-it-deflist](https://github.com/markdown-it/markdown-it-deflist) 插件",
   "markdownEnhanced.configuration.footnote.enable": "开启 [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote) 插件",
   "markdownEnhanced.configuration.mark.enable": "开启 [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark) 插件",
+  "markdownEnhanced.configuration.mermaid.enable": "开启 [mermaid](https://mermaid-js.github.io)",
   "markdownEnhanced.configuration.sub.enable": "开启 [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub) 插件",
   "markdownEnhanced.configuration.sup.enable": "开启 [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup) 插件",
   "markdownEnhanced.configuration.tableOfContents.enable": "开启 [markdown-it-table-of-contents](https://github.com/cmaas/markdown-it-table-of-contents) 插件",

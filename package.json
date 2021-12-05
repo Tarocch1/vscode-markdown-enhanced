@@ -30,6 +30,10 @@
       "./styles/github-markdown.css",
       "./styles/highlight.css"
     ],
+    "markdown.previewScripts": [
+      "./scripts/var.js",
+      "./scripts/mermaid.js"
+    ],
     "configuration": {
       "title": "Markdown Enhanced",
       "properties": {
@@ -94,6 +98,11 @@
           "default": true,
           "markdownDescription": "%markdownEnhanced.configuration.mark.enable%"
         },
+        "markdownEnhanced.mermaid.enable": {
+          "type": "boolean",
+          "default": true,
+          "markdownDescription": "%markdownEnhanced.configuration.mermaid.enable%"
+        },
         "markdownEnhanced.sub.enable": {
           "type": "boolean",
           "default": true,
@@ -148,16 +157,22 @@
     }
   },
   "scripts": {
-    "vscode:prepublish": "npm run compile",
+    "vscode:prepublish": "npm run compile && npm run mermaid",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "compile:watch": "tsc -watch -p ./",
+    "mermaid": "esbuild ./scripts/mermaid.ts --bundle --minify --outfile=./scripts/_mermaid.js",
+    "mermaid:watch": "esbuild ./scripts/mermaid.ts --bundle --watch --outfile=./scripts/_mermaid.js",
+    "watch": "npm run compile:watch && npm run mermaid:watch"
   },
   "devDependencies": {
     "@types/markdown-it": "^12.2.3",
+    "@types/mermaid": "^8.2.7",
     "@types/node": "^16.11.11",
     "@types/prismjs": "^1.16.6",
     "@types/vscode": "^1.62.0",
+    "esbuild": "^0.14.2",
     "markdown-it": "^12.2.0",
+    "mermaid": "^8.13.4",
     "typescript": "^4.4.3"
   },
   "dependencies": {

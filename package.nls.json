@@ -12,6 +12,7 @@
   "markdownEnhanced.configuration.deflist.enable": "Enable [markdown-it-deflist](https://github.com/markdown-it/markdown-it-deflist)",
   "markdownEnhanced.configuration.footnote.enable": "Enable [markdown-it-footnote](https://github.com/markdown-it/markdown-it-footnote)",
   "markdownEnhanced.configuration.mark.enable": "Enable [markdown-it-mark](https://github.com/markdown-it/markdown-it-mark)",
+  "markdownEnhanced.configuration.mermaid.enable": "Enable [mermaid](https://mermaid-js.github.io)",
   "markdownEnhanced.configuration.sub.enable": "Enable [markdown-it-sub](https://github.com/markdown-it/markdown-it-sub)",
   "markdownEnhanced.configuration.sup.enable": "Enable [markdown-it-sup](https://github.com/markdown-it/markdown-it-sup)",
   "markdownEnhanced.configuration.tableOfContents.enable": "Enable [markdown-it-table-of-contents](https://github.com/cmaas/markdown-it-table-of-contents)",

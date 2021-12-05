@@ -3,13 +3,15 @@ import { MarkdownItAnchor } from './MarkdownItAnchor';
 import { MarkdownItAttrs } from './MarkdownItAttrs';
 import { MarkdownItDeflist } from './MarkdownItDeflist';
 import { MarkdownItFootnote } from './MarkdownItFootnote';
-import { MarkdownItHighlight } from './MarkdownItHighlight'
-import { MarkdownItMark } from './MarkdownItMark'
+import { MarkdownItHighlight } from './MarkdownItHighlight';
+import { MarkdownItMark } from './MarkdownItMark';
+import { MarkdownItMermaid } from './MarkdownItMermaid';
 import { MarkdownItSub } from './MarkdownItSub';
 import { MarkdownItSup } from './MarkdownItSup';
 import { MarkdownItTableOfContents } from './MarkdownItTableOfContents';
 import { MarkdownItTaskLists } from './MarkdownItTaskLists';
 import { MarkdownItUnderline } from './MarkdownItUnderline';
+import { MarkdownItVar } from './MarkdownItVar';
 
 export const plugins = [
   MarkdownItAbbr,
@@ -19,9 +21,11 @@ export const plugins = [
   MarkdownItFootnote,
   MarkdownItHighlight,
   MarkdownItMark,
+  MarkdownItMermaid,
   MarkdownItSub,
   MarkdownItSup,
   MarkdownItTableOfContents,
   MarkdownItTaskLists,
   MarkdownItUnderline,
+  MarkdownItVar,
 ];

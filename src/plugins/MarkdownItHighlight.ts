@@ -19,32 +19,30 @@ export class MarkdownItHighlight extends Plugin {
   extra(md: MarkdownIt) {
     let highlighter: typeof md.options.highlight;
     if (config.highlight === 'highlight.js') {
-      highlighter = hljsHighlight;
+      highlighter = this.hljsHighlight;
     } else {
       loadLanguages();
-      highlighter = prismHighlight;
+      highlighter = this.prismHighlight;
     }
     md.set({ highlight: highlighter });
   }
-}
 
-function hljsHighlight(str: string, lang: string, attrs: string): string {
-  let html = str;
-  if (lang && hljs.getLanguage(lang)) {
-    try {
+  hljsHighlight(str: string, lang: string, attrs: string): string {
+    let html = str;
+    if (lang && hljs.getLanguage(lang)) {
       html = hljs.highlight(str, {
         language: lang,
         ignoreIllegals: true,
       }).value;
-    } catch (error) {}
+    }
+    return html;
   }
-  return html;
-}
 
-function prismHighlight(str: string, lang: string, attrs: string): string {
-  let html = str;
-  if (lang && prism.languages[lang]) {
-    html = prism.highlight(str, prism.languages[lang], lang);
+  prismHighlight(str: string, lang: string, attrs: string): string {
+    let html = str;
+    if (lang && prism.languages[lang]) {
+      html = prism.highlight(str, prism.languages[lang], lang);
+    }
+    return html;
   }
-  return html;
 }

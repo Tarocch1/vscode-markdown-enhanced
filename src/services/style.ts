@@ -1,7 +1,7 @@
-import { join } from 'path';
-import { Uri, workspace, commands } from 'vscode';
+import { workspace, commands } from 'vscode';
 import { TextEncoder, TextDecoder } from 'util';
 import { config } from '../config';
+import { getFileUri } from '../utils';
 
 type File = {
   from: string;
@@ -14,8 +14,6 @@ type Files = {
   light: File[];
   dark: File[];
 };
-
-const getCSSPath = (file: string) => join(__dirname, '../../', file);
 
 const defaultTransfer = (code: string) => code;
 const githubTransfer = (code: string) =>
@@ -71,12 +69,12 @@ async function updateCSS() {
   for (const file of files) {
     if (!file.when()) continue;
     const fileContents = textDecoder.decode(
-      await workspace.fs.readFile(Uri.file(getCSSPath(file.from)))
+      await workspace.fs.readFile(getFileUri(file.from))
     );
     const fileResult = textEncoder.encode(file.transfer(fileContents));
-    workspace.fs.writeFile(Uri.file(getCSSPath(file.to)), fileResult);
+    workspace.fs.writeFile(getFileUri(file.to), fileResult);
   }
-  commands.executeCommand('markdown.preview.refresh');
+  commands.executeCommand('markdown.api.reloadPlugins');
 }
 
 export async function initCSS() {

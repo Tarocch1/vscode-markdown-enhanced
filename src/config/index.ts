@@ -5,6 +5,10 @@ class Config extends ConfigReader {
     super('markdownEnhanced');
   }
 
+  get varEnable(): boolean {
+    return true;
+  }
+
   get highlightEnable(): boolean {
     return true;
   }
@@ -41,6 +45,10 @@ class Config extends ConfigReader {
 
   get markEnable(): boolean {
     return this.read<boolean>('mark.enable', true);
+  }
+
+  get mermaidEnable(): boolean {
+    return this.read<boolean>('mermaid.enable', true);
   }
 
   get subEnable(): boolean {

@@ -19,6 +19,7 @@ export abstract class Plugin {
   }
 
   load(md: MarkdownIt) {
+    this.beforeLoad(md)
     if (this.enable) {
       if (this._package) md.use(require(this._package), this.options);
       this.extra(md);
@@ -27,5 +28,6 @@ export abstract class Plugin {
 
   abstract get options(): Object;
 
+  beforeLoad(md: MarkdownIt) {}
   extra(md: MarkdownIt) {}
 }

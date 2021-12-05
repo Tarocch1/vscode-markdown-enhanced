@@ -1,6 +1,8 @@
 .vscode/**
 .vscode-test/**
 src/**
+scripts/*
+!scripts/_mermaid.js
 styles/**
 !styles/base.css
 .gitignore
