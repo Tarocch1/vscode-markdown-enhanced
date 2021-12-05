@@ -10,6 +10,7 @@ import { MarkdownItSub } from './MarkdownItSub';
 import { MarkdownItSup } from './MarkdownItSup';
 import { MarkdownItTableOfContents } from './MarkdownItTableOfContents';
 import { MarkdownItTaskLists } from './MarkdownItTaskLists';
+import { MarkdownItTheme } from './MarkdownItTheme';
 import { MarkdownItUnderline } from './MarkdownItUnderline';
 import { MarkdownItVar } from './MarkdownItVar';
 
@@ -26,6 +27,7 @@ export const plugins = [
   MarkdownItSup,
   MarkdownItTableOfContents,
   MarkdownItTaskLists,
+  MarkdownItTheme,
   MarkdownItUnderline,
   MarkdownItVar,
 ];

@@ -1,4 +1,4 @@
-import { workspace } from 'vscode';
+import { workspace, commands } from 'vscode';
 import { TextEncoder } from 'util';
 import MarkdownIt from 'markdown-it';
 import { Plugin } from './Plugin';
@@ -17,15 +17,20 @@ export class MarkdownItVar extends Plugin {
   }
 
   beforeLoad(md: MarkdownIt) {
+    this.updateVar();
+  }
+
+  private async updateVar() {
     const scripts = `
-      window.$markdownEnhanced = {
-        theme: '${config.theme}'
-      }
-    `;
+    window.$markdownEnhanced = {
+      theme: '${config.theme}'
+    }
+  `;
     const textEncoder = new TextEncoder();
-    workspace.fs.writeFile(
+    await workspace.fs.writeFile(
       getFileUri('scripts/var.js'),
       textEncoder.encode(scripts)
     );
+    commands.executeCommand('markdown.preview.refresh');
   }
 }

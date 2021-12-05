@@ -1,4 +1,4 @@
-import { workspace } from 'vscode';
+import { workspace, commands } from 'vscode';
 import { TextEncoder } from 'util';
 import MarkdownIt from 'markdown-it';
 import { Plugin } from './Plugin';
@@ -30,15 +30,17 @@ export class MarkdownItMermaid extends Plugin {
     const content = await workspace.fs.readFile(
       getFileUri('scripts/_mermaid.js')
     );
-    workspace.fs.writeFile(getFileUri('scripts/mermaid.js'), content);
+    await workspace.fs.writeFile(getFileUri('scripts/mermaid.js'), content);
+    commands.executeCommand('markdown.preview.refresh');
   }
 
-  private removeScript() {
+  private async removeScript() {
     const textEncoder = new TextEncoder();
-    workspace.fs.writeFile(
+    await workspace.fs.writeFile(
       getFileUri('scripts/mermaid.js'),
       textEncoder.encode('')
     );
+    commands.executeCommand('markdown.preview.refresh');
   }
 
   extra(md: MarkdownIt) {

@@ -1,5 +1,7 @@
 import { workspace, commands } from 'vscode';
 import { TextEncoder, TextDecoder } from 'util';
+import MarkdownIt from 'markdown-it';
+import { Plugin } from './Plugin';
 import { config } from '../config';
 import { getFileUri } from '../utils';
 
@@ -62,25 +64,33 @@ const filesMap: Files = {
   ],
 };
 
-async function updateCSS() {
-  const files = filesMap[config.theme];
-  const textEncoder = new TextEncoder();
-  const textDecoder = new TextDecoder();
-  for (const file of files) {
-    if (!file.when()) continue;
-    const fileContents = textDecoder.decode(
-      await workspace.fs.readFile(getFileUri(file.from))
-    );
-    const fileResult = textEncoder.encode(file.transfer(fileContents));
-    workspace.fs.writeFile(getFileUri(file.to), fileResult);
+export class MarkdownItTheme extends Plugin {
+  constructor() {
+    super('theme');
+    super._package = '';
   }
-  commands.executeCommand('markdown.api.reloadPlugins');
-}
 
-export async function initCSS() {
-  await updateCSS();
-  config.on(
-    ['markdownEnhanced.theme', 'markdownEnhanced.highlight'],
-    updateCSS
-  );
+  get options() {
+    const options = {};
+    return options;
+  }
+
+  beforeLoad(md: MarkdownIt) {
+    this.updateCSS();
+  }
+
+  private async updateCSS() {
+    const files = filesMap[config.theme];
+    const textEncoder = new TextEncoder();
+    const textDecoder = new TextDecoder();
+    for (const file of files) {
+      if (!file.when()) continue;
+      const fileContents = textDecoder.decode(
+        await workspace.fs.readFile(getFileUri(file.from))
+      );
+      const fileResult = textEncoder.encode(file.transfer(fileContents));
+      await workspace.fs.writeFile(getFileUri(file.to), fileResult);
+    }
+    commands.executeCommand('markdown.preview.refresh');
+  }
 }
