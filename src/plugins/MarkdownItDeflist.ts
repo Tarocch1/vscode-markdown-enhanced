@@ -1,12 +1,12 @@
-import { Plugin } from './Plugin';
+import { Plugin } from './Plugin'
 
 export class MarkdownItDeflist extends Plugin {
   constructor() {
-    super('deflist');
+    super('deflist')
   }
 
   get options() {
-    const options = {};
-    return options;
+    const options = {}
+    return options
   }
 }

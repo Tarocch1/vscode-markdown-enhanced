@@ -1,48 +1,48 @@
-import hljs from 'highlight.js';
-import prism from 'prismjs';
-import loadLanguages from 'prismjs/components/';
-import MarkdownIt from 'markdown-it';
-import { Plugin } from './Plugin';
-import { config } from '../config';
+import hljs from 'highlight.js'
+import { languages, highlight as prismHighlight } from 'prismjs'
+import loadLanguages from 'prismjs/components/'
+import MarkdownIt from 'markdown-it'
+import { Plugin } from './Plugin'
+import { config } from '../config'
 
 export class MarkdownItHighlight extends Plugin {
   constructor() {
-    super('highlight');
-    super._package = '';
+    super('highlight')
+    super._package = ''
   }
 
   get options() {
-    const options = {};
-    return options;
+    const options = {}
+    return options
   }
 
   extra(md: MarkdownIt) {
-    let highlighter: typeof md.options.highlight;
+    let highlighter: typeof md.options.highlight
     if (config.highlight === 'highlight.js') {
-      highlighter = this.hljsHighlight;
+      highlighter = this.hljsHighlighter
     } else {
-      loadLanguages();
-      highlighter = this.prismHighlight;
+      loadLanguages()
+      highlighter = this.prismHighlighter
     }
-    md.set({ highlight: highlighter });
+    md.set({ highlight: highlighter })
   }
 
-  hljsHighlight(str: string, lang: string, attrs: string): string {
-    let html = str;
+  hljsHighlighter(str: string, lang: string): string {
+    let html = str
     if (lang && hljs.getLanguage(lang)) {
       html = hljs.highlight(str, {
         language: lang,
         ignoreIllegals: true,
-      }).value;
+      }).value
     }
-    return html;
+    return html
   }
 
-  prismHighlight(str: string, lang: string, attrs: string): string {
-    let html = str;
-    if (lang && prism.languages[lang]) {
-      html = prism.highlight(str, prism.languages[lang], lang);
+  prismHighlighter(str: string, lang: string): string {
+    let html = str
+    if (lang && languages[lang]) {
+      html = prismHighlight(str, languages[lang], lang)
     }
-    return html;
+    return html
   }
 }

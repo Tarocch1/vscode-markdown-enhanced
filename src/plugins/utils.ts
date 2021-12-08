@@ -6,9 +6,9 @@
  * Copyright (c) 2018-present, Yuxi (Evan) You
  */
 
-const rControl = /[\u0000-\u001f]/g;
-const rSpecial = /[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'“”‘’–—<>,.?/]+/g;
-const rCombining = /[\u0300-\u036F]/g;
+const rControl = /[\u0000-\u001f]/g // eslint-disable-line no-control-regex
+const rSpecial = /[\s~`!@#$%^&*()\-_+=[\]{}|\\;:"'“”‘’–—<>,.?/]+/g
+const rCombining = /[\u0300-\u036F]/g
 
 export function slugify(str: string) {
   return str
@@ -16,10 +16,10 @@ export function slugify(str: string) {
     .replace(rCombining, '')
     .replace(rControl, '')
     .replace(rSpecial, '-')
-    .replace(/\-{2,}/g, '-')
-    .replace(/^\-+|\-+$/g, '')
+    .replace(/-{2,}/g, '-')
+    .replace(/^-+|-+$/g, '')
     .replace(/^(\d)/, '_$1')
-    .toLowerCase();
+    .toLowerCase()
 }
 
 /**
@@ -31,5 +31,5 @@ export function slugify(str: string) {
  * @returns
  */
 export function camel2Kebab(str: string) {
-  return str.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`);
+  return str.replace(/[A-Z]/g, (match) => `-${match.toLowerCase()}`)
 }

@@ -1,12 +1,12 @@
-import { Plugin } from './Plugin';
+import { Plugin } from './Plugin'
 
 export class MarkdownItMark extends Plugin {
   constructor() {
-    super('mark');
+    super('mark')
   }
 
   get options() {
-    const options = {};
-    return options;
+    const options = {}
+    return options
   }
 }

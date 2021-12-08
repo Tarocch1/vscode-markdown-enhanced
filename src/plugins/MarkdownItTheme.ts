@@ -1,25 +1,24 @@
-import { workspace, commands } from 'vscode';
-import { TextEncoder, TextDecoder } from 'util';
-import MarkdownIt from 'markdown-it';
-import { Plugin } from './Plugin';
-import { config } from '../config';
-import { getFileUri } from '../utils';
+import { workspace, commands } from 'vscode'
+import { TextEncoder, TextDecoder } from 'util'
+import { Plugin } from './Plugin'
+import { config } from '../config'
+import { getFileUri } from '../utils'
 
 type File = {
-  from: string;
-  to: string;
-  transfer: (code: string) => string;
-  when: () => boolean;
-};
+  from: string
+  to: string
+  transfer: (code: string) => string
+  when: () => boolean
+}
 
 type Files = {
-  light: File[];
-  dark: File[];
-};
+  light: File[]
+  dark: File[]
+}
 
-const defaultTransfer = (code: string) => code;
+const defaultTransfer = (code: string) => code
 const githubTransfer = (code: string) =>
-  code.replace(/\.markdown-body/g, '.vscode-body');
+  code.replace(/\.markdown-body/g, '.vscode-body')
 
 const filesMap: Files = {
   light: [
@@ -62,35 +61,35 @@ const filesMap: Files = {
       when: () => config.highlight === 'prism.js',
     },
   ],
-};
+}
 
 export class MarkdownItTheme extends Plugin {
   constructor() {
-    super('theme');
-    super._package = '';
+    super('theme')
+    super._package = ''
   }
 
   get options() {
-    const options = {};
-    return options;
+    const options = {}
+    return options
   }
 
-  beforeLoad(md: MarkdownIt) {
-    this.updateCSS();
+  beforeLoad() {
+    this.updateCSS()
   }
 
   private async updateCSS() {
-    const files = filesMap[config.theme];
-    const textEncoder = new TextEncoder();
-    const textDecoder = new TextDecoder();
+    const files = filesMap[config.theme]
+    const textEncoder = new TextEncoder()
+    const textDecoder = new TextDecoder()
     for (const file of files) {
-      if (!file.when()) continue;
+      if (!file.when()) continue
       const fileContents = textDecoder.decode(
         await workspace.fs.readFile(getFileUri(file.from))
-      );
-      const fileResult = textEncoder.encode(file.transfer(fileContents));
-      await workspace.fs.writeFile(getFileUri(file.to), fileResult);
+      )
+      const fileResult = textEncoder.encode(file.transfer(fileContents))
+      await workspace.fs.writeFile(getFileUri(file.to), fileResult)
     }
-    commands.executeCommand('markdown.preview.refresh');
+    commands.executeCommand('markdown.preview.refresh')
   }
 }

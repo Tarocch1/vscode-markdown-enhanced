@@ -1,7 +1,4 @@
-.DS_Store
 node_modules
-dist
+out
 scripts/*
 !scripts/mermaid.ts
-styles/*
-!styles/base.css

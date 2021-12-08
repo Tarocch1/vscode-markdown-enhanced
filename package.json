@@ -22,7 +22,7 @@
   "activationEvents": [
     "onLanguage:markdown"
   ],
-  "main": "./out/extension.js",
+  "main": "./dist/extension.js",
   "contributes": {
     "markdown.markdownItPlugins": true,
     "markdown.previewStyles": [
@@ -162,17 +162,41 @@
     "compile:watch": "tsc -watch -p ./",
     "mermaid": "esbuild ./scripts/mermaid.ts --bundle --minify --outfile=./scripts/_mermaid.js",
     "mermaid:watch": "esbuild ./scripts/mermaid.ts --bundle --watch --outfile=./scripts/_mermaid.js",
-    "watch": "npm run compile:watch && npm run mermaid:watch"
+    "lint": "eslint --fix 'src/**/*.ts' 'scripts/**/*.ts'"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.ts": [
+      "eslint --fix --max-warnings=0",
+      "git add"
+    ],
+    "packages/**/*.ts": [
+      "eslint --fix --max-warnings=0",
+      "git add"
+    ]
   },
   "devDependencies": {
+    "@tarocch1/eslint-config": "^2.0.0",
     "@types/markdown-it": "^12.2.3",
     "@types/mermaid": "^8.2.7",
     "@types/node": "^16.11.11",
     "@types/prismjs": "^1.16.6",
     "@types/vscode": "^1.62.0",
+    "@typescript-eslint/eslint-plugin": "^5.6.0",
+    "@typescript-eslint/parser": "^5.6.0",
     "esbuild": "^0.14.2",
+    "eslint": "^8.4.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-import-resolver-typescript": "^2.5.0",
+    "eslint-plugin-import": "^2.25.3",
+    "eslint-plugin-prettier": "^4.0.0",
     "markdown-it": "^12.2.0",
     "mermaid": "^8.13.4",
+    "prettier": "^2.5.1",
     "typescript": "^4.4.3"
   },
   "dependencies": {

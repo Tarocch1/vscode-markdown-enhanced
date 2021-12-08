@@ -1,12 +1,12 @@
-import { Plugin } from './Plugin';
+import { Plugin } from './Plugin'
 
 export class MarkdownItAttrs extends Plugin {
   constructor() {
-    super('attrs');
+    super('attrs')
   }
 
   get options() {
-    const options = {};
-    return options;
+    const options = {}
+    return options
   }
 }

@@ -1,4 +1,4 @@
-import mermaid from 'mermaid';
+import mermaid from 'mermaid'
 
 function init() {
   mermaid.initialize({
@@ -34,7 +34,7 @@ function init() {
     state: {
       useMaxWidth: false,
     },
-  });
+  })
 }
 
-init();
+init()

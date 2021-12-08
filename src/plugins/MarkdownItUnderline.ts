@@ -1,12 +1,12 @@
-import { Plugin } from './Plugin';
+import { Plugin } from './Plugin'
 
 export class MarkdownItUnderline extends Plugin {
   constructor() {
-    super('underline');
+    super('underline')
   }
 
   get options() {
-    const options = {};
-    return options;
+    const options = {}
+    return options
   }
 }
