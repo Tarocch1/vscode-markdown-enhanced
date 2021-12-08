@@ -162,7 +162,8 @@
     "compile:watch": "tsc -watch -p ./",
     "mermaid": "esbuild ./scripts/mermaid.ts --bundle --minify --outfile=./scripts/_mermaid.js",
     "mermaid:watch": "esbuild ./scripts/mermaid.ts --bundle --watch --outfile=./scripts/_mermaid.js",
-    "lint": "eslint --fix 'src/**/*.ts' 'scripts/**/*.ts'"
+    "lint": "eslint --fix 'src/**/*.ts' 'scripts/**/*.ts'",
+    "publish": "vsce publish"
   },
   "husky": {
     "hooks": {
@@ -197,7 +198,8 @@
     "markdown-it": "^12.2.0",
     "mermaid": "^8.13.4",
     "prettier": "^2.5.1",
-    "typescript": "^4.4.3"
+    "typescript": "^4.4.3",
+    "vsce": "^2.5.1"
   },
   "dependencies": {
     "github-markdown-css": "^5.0.0",
