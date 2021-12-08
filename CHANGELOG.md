@@ -1,5 +1,9 @@
 # Change Log
 
+## v0.5.1
+
+- Remove SourceMap
+
 ## v0.5.0
 
 - Add [mermaid](https://mermaid-js.github.io)
