@@ -196,7 +196,7 @@
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
     "markdown-it": "^12.2.0",
-    "mermaid": "^8.13.4",
+    "mermaid": "^8.13.8",
     "prettier": "^2.5.1",
     "typescript": "^4.4.3",
     "vsce": "^2.5.1"
