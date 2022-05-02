@@ -215,6 +215,6 @@
     "markdown-it-table-of-contents": "^0.6.0",
     "markdown-it-task-lists": "^2.1.1",
     "markdown-it-underline": "^1.0.1",
-    "prismjs": "^1.25.0"
+    "prismjs": "^1.27.0"
   }
 }
